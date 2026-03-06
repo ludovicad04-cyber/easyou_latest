@@ -258,6 +258,81 @@ void getRefY;
   }, { passive: true });
 }());
 
+// Wheel hijack: force one step per gesture inside #how
+(function () {
+  const section = document.getElementById('how');
+  if (!section) return;
+
+  const STEPS = 3;
+  const ANIM_MS = 550;
+  let currentStep = 0;
+  let isAnimating = false;
+
+  function sectionTop() {
+    return section.getBoundingClientRect().top + window.scrollY;
+  }
+
+  function scrollable() {
+    return section.offsetHeight - window.innerHeight;
+  }
+
+  function stepScrollTop(step) {
+    // Each step occupies scrollable/STEPS px of budget
+    return sectionTop() + scrollable() * step / STEPS;
+  }
+
+  function inStickyZone() {
+    if (window.innerWidth <= 760) return false;
+    const rect = section.getBoundingClientRect();
+    return rect.top <= 1 && (-rect.top) < scrollable();
+  }
+
+  function goTo(step) {
+    isAnimating = true;
+    window.scrollTo({ top: stepScrollTop(step), behavior: 'smooth' });
+    setTimeout(() => { isAnimating = false; }, ANIM_MS);
+  }
+
+  window.addEventListener('wheel', function (e) {
+    if (window.innerWidth <= 760) return;
+    if (!inStickyZone()) return;
+
+    e.preventDefault();
+    if (isAnimating) return;
+
+    const dir = e.deltaY > 0 ? 1 : -1;
+    const next = currentStep + dir;
+
+    if (next < 0) {
+      // Scroll up above section
+      isAnimating = true;
+      window.scrollTo({ top: sectionTop() - 10, behavior: 'smooth' });
+      setTimeout(() => { isAnimating = false; }, ANIM_MS);
+      return;
+    }
+    if (next >= STEPS) {
+      // All steps done — release scroll past section
+      isAnimating = true;
+      window.scrollTo({ top: sectionTop() + scrollable() + 10, behavior: 'smooth' });
+      setTimeout(() => { isAnimating = false; }, ANIM_MS);
+      return;
+    }
+
+    currentStep = next;
+    goTo(currentStep);
+  }, { passive: false });
+
+  // Keep currentStep in sync when scrolling via other means (keyboard, scrollbar)
+  window.addEventListener('scroll', function () {
+    if (isAnimating || window.innerWidth <= 760) return;
+    const rect = section.getBoundingClientRect();
+    const s = scrollable();
+    if (s <= 0) return;
+    const scrolled = Math.max(0, -rect.top);
+    currentStep = Math.min(STEPS - 1, Math.floor(scrolled / s * STEPS));
+  }, { passive: true });
+}());
+
 // Value counters: count up when section scrolls into view
 const counterEls = document.querySelectorAll('.value-counter');
 if (counterEls.length) {
