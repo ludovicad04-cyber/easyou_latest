@@ -366,7 +366,7 @@ h1 {
   border-radius: 8px;
 }
 
-.value-stats { margin-top: auto; }
+.value-stats { margin-top: var(--space-4); }
 
 .value-stat-primary {
   margin: 0 0 0.15rem;
