@@ -347,15 +347,15 @@ h1 {
 
 .value-card-text h3 {
   font-family: "Plus Jakarta Sans", sans-serif !important;
-  margin: 0 0 var(--space-6);
-  font-size: 2.1rem !important;
-  line-height: 1.25;
+  margin: 0;
+  font-size: clamp(1.1rem, 1.6vw, 1.45rem) !important;
+  line-height: 1.35;
   color: #fff;
   font-weight: 700;
 }
 
 .value-card-body .value-jars {
-  width: 36%;
+  width: 48%;
   flex-shrink: 0;
   display: block;
 }
@@ -370,14 +370,14 @@ h1 {
 
 .value-stat-primary {
   margin: 0 0 0.15rem;
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
   font-weight: 700;
   color: #fff;
 }
 
 .value-stat-result {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
   font-weight: 700;
 }
 
