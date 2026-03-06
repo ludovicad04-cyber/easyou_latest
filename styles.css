@@ -77,57 +77,104 @@ section {
 }
 
 #hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  position: relative;
+  align-items: center;
+  text-align: center;
+  padding: 160px 60px 220px;
   overflow: hidden;
   background: #1e1e1e;
   color: #fff;
-  text-align: center;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
   background: url("brand identity/background.png") center/cover no-repeat;
-  opacity: 0.22;
+  opacity: 0.18;
   z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28,33,33,0.2) 0%, rgba(28,33,33,0.6) 60%, #1e1e1e 100%);
+  z-index: 0;
+}
+
+.topo-lines {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 220px;
+  overflow: hidden;
+  z-index: 1;
+}
+.topo-lines svg { width: 100%; height: 100%; }
+.topo-path {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: drawTopo 3s ease 0.8s forwards;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 var(--space-5);
 }
 
+.hero-logo-wordmark {
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+.hero-logo-wordmark img,
 .hero-brand {
-  height: 90px;
-  width: auto;
+  height: auto;
+  width: clamp(300px, 62vw, 780px);
   max-width: 92%;
   display: block;
   margin: 0 auto;
+  opacity: 0.4;
 }
 
 .hero-claim {
-  font-family: "Qurova", sans-serif;
-  font-size: clamp(1.4rem, 4vw, 2.8rem);
+  display: inline-block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.1rem, 2.5vw, 2.25rem);
   font-weight: 600;
-  color: var(--color-primary);
-  margin: var(--space-3) 0 var(--space-4);
   letter-spacing: -0.01em;
+  color: #EAEBDC;
+  margin-top: 40px;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.35s forwards;
 }
 
 .hero-tagline {
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-style: normal;
-  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
-  color: rgba(255, 255, 255, 0.72);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  color: rgba(255, 255, 255, 0.85);
   margin: 0 0 var(--space-6);
+}
+
+#hero h1 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #EAEBDC;
+  letter-spacing: -0.015em;
+  font-style: italic;
+  margin: 0;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.5s forwards;
 }
 
 h1 {
@@ -137,10 +184,45 @@ h1 {
 }
 
 .hero-actions {
+  margin-top: 40px;
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
+  gap: 20px;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.6s forwards;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(234, 235, 220, 0.4);
+  z-index: 2;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.9s forwards, scrollBounce 2s ease-in-out 2s infinite;
+}
+.scroll-arrow { font-size: 16px; color: rgba(234,235,220,0.3); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes drawTopo {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
 }
 
 .btn-primary,
