@@ -363,7 +363,6 @@ h1 {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
 }
 
 .value-stats { margin-top: var(--space-4); }
@@ -421,7 +420,7 @@ h1 {
 }
 
 .value-card {
-  background: #3a3a3a;
+  background: #373737;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   padding: var(--space-6);
@@ -431,7 +430,7 @@ h1 {
 }
 
 .value-card.highlight {
-  background: #3a3a3a;
+  background: #373737;
 }
 
 .value-card h3 {
