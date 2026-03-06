@@ -335,9 +335,9 @@ h1 {
 .value-card-body {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-3);
   flex: 1;
-  margin: var(--space-5) 0;
+  margin: var(--space-3) 0 0;
 }
 
 .value-card-text {
@@ -423,10 +423,9 @@ h1 {
   background: #373737;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
-  padding: var(--space-6);
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
-  min-height: 380px;
 }
 
 .value-card.highlight {
