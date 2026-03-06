@@ -670,7 +670,7 @@ h1 {
 .steps-sticky-phone {
   overflow: hidden;
   display: grid;            /* inner grid for CSS stacking of phone screens */
-  background: #0d0d0d;
+  background: #fff;
   padding-top: 4rem;        /* compensate for fixed nav bar so phone centers in visible area */
 }
 
