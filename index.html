@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=43">
+  <link rel="stylesheet" href="styles.css?v=58">
 </head>
 <body>
   <div id="cursor"></div>
@@ -49,7 +49,7 @@
 
     <section id="manifesto">
       <p class="manifesto-text reveal">
-        <span class="text-orange">L'app made in Italy per chi</span> si sente lontano dal<br>mondo dalla finanza e <span class="text-orange">vorrebbe iniziare a investire.</span>
+        <span class="text-orange">L'App made in Italy per chi</span> si sente lontano dal<br>mondo dalla finanza, ma <span class="text-orange">vorrebbe iniziare a investire.</span>
       </p>
     </section>
 
@@ -177,15 +177,34 @@
 
     <section id="waitlist">
       <h2 class="reveal">Iscriviti alla lista d'attesa</h2>
-      <p class="waitlist-prize reveal">Per i primi 1.000 utenti che investiranno con noi, ci sarà un premio.</p>
-      <form class="waitlist-form reveal" id="waitlistForm">
-        <label class="sr-only" for="email">Email</label>
-        <input id="email" type="email" placeholder="La tua email" required>
-        <button type="submit">Inizia un percorso</button>
-      </form>
-      <div class="waitlist-position reveal">
-        <p class="waitlist-position-num" id="waitlistCount">0</p>
-        <p class="waitlist-position-label">persone già in lista prima di te</p>
+      <p class="waitlist-subtitle reveal">Accedi in anteprima a Easyou e scopri un nuovo modo di gestire i tuoi soldi.</p>
+      <div class="waitlist-main reveal">
+        <div class="waitlist-form-wrap">
+          <form class="waitlist-form" id="waitlistForm">
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" type="email" placeholder="La tua email" required>
+            <button type="submit">Accesso anticipato</button>
+          </form>
+          <p class="waitlist-spam">Nessuno spam. Ti scriviamo solo quando sarà il momento.</p>
+        </div>
+        <div class="waitlist-counter">
+          <p class="waitlist-position-num" id="waitlistCount">0</p>
+          <p class="waitlist-position-label">persone in lista prima di te</p>
+        </div>
+      </div>
+      <div class="waitlist-pledge reveal">
+        <p>Non sarà un semplice accesso anticipato: potrai darci feedback direttamente.<br>Disegniamo insieme il futuro di easyou.</p>
+      </div>
+    </section>
+
+    <section id="report">
+      <div class="report-inner">
+        <h2 class="report-title reveal">Ricerca Easyou</h2>
+        <p class="report-body reveal">In attesa della partnership con un intermediario finanziario autorizzato,<br>abbiamo condotto una ricerca proprietaria su <strong>come gli italiani<br>gestiscono i soldi</strong> e <strong>cosa pensano degli investimenti</strong>.</p>
+        <div class="report-bottom reveal">
+          <p class="report-cta-text">Se ti senti insicuro ma vorresti iniziare,<br><span class="text-orange">sei in buona compagnia.</span></p>
+          <a href="brand identity/Easyou_ItalianSavings&amp;Investments_Report_2025-2.pdf" class="btn-primary report-btn" download>Scarica il report</a>
+        </div>
       </div>
     </section>
 
@@ -240,12 +259,13 @@
 
   <footer>
     <img class="footer-logo" src="brand identity/easyou_light.svg" alt="easyou logo">
-    <p class="footer-copy">© 2026 easyou. Made in Italy. Investire comporta rischi.</p>
+    <p class="footer-disclaimer">Easyou è un progetto in fase di sviluppo. Il sito easyouapp.com ha finalità esclusivamente informative e non offre servizi di investimento. I contenuti presenti non costituiscono consulenza finanziaria né sollecitazione all'investimento. Investire comporta rischi.</p>
     <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Termini</a>
-      <a href="#">Disclaimer</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Termini e Condizioni</a>
     </div>
+    <p class="footer-copy">© 2026 easyou. Made in Italy.</p>
   </footer>
 
   <script src="script.js"></script>

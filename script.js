@@ -66,7 +66,7 @@ let overDarkEl   = false;
 
 function updateCursorColor() {
   rafPending = false;
-  document.body.classList.toggle('cursor-black', (isInWaitlist() || overOrangeEl) && !overDarkEl);
+  document.body.classList.toggle('cursor-black', overOrangeEl && !overDarkEl);
 }
 
 function scheduleUpdate() {
@@ -160,13 +160,38 @@ if (waitlistCountEl) {
 }
 
 // Waitlist form
-document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const position = getWaitlistCount() + 1;
+  const email = document.getElementById('email').value;
   const toast = document.getElementById('toast');
-  toast.textContent = `✓ Sei il #${position.toLocaleString('it-IT')} della lista!`;
+
+  try {
+    const res = await fetch('https://easyou-mvp-api-production.up.railway.app/api/waiting-list/join', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+
+    console.log('API status:', res.status);
+    const data = await res.json().catch(() => null);
+    console.log('API response:', data);
+
+    if (res.ok) {
+      const position = getWaitlistCount() + 1;
+      toast.textContent = `✓ Sei il #${position.toLocaleString('it-IT')} della lista!`;
+      this.reset();
+    } else if (res.status === 409) {
+      toast.textContent = '✓ Sei già in lista! Ti avviseremo presto.';
+      this.reset();
+    } else {
+      toast.textContent = `Errore ${res.status}. Riprova più tardi.`;
+    }
+  } catch (err) {
+    console.error('Fetch error:', err);
+    toast.textContent = 'Qualcosa è andato storto. Riprova più tardi.';
+  }
+
   toast.classList.add('show');
-  this.reset();
   setTimeout(() => toast.classList.remove('show'), 4500);
 });
 
