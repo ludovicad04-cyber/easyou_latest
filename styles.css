@@ -314,10 +314,8 @@ h1 {
 .value-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(1rem, 2vw, 2rem);
+  gap: var(--space-4);
   align-items: stretch;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .value-card-wrap {
