@@ -314,8 +314,10 @@ h1 {
 .value-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
-  align-items: start;
+  gap: clamp(1rem, 2vw, 2rem);
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .value-card-wrap {
@@ -329,35 +331,39 @@ h1 {
   font-size: 0.8rem;
   font-weight: 600;
   color: rgba(255, 246, 239, 0.45);
-  margin: 0 0 0.5rem;
+  margin: 0;
 }
 
 .value-card-body {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin: 0;
+  gap: 0.75rem;
+  margin: 0.5rem 0 0;
 }
 
 .value-card-text {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .value-card-text h3 {
   font-family: "Plus Jakarta Sans", sans-serif !important;
   margin: 0;
-  font-size: clamp(0.95rem, 1.3vw, 1.2rem) !important;
-  line-height: 1.35;
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem) !important;
+  line-height: 1.4;
   color: #fff;
   font-weight: 700;
 }
 
 .value-card-body .value-jars {
-  width: 62%;
+  width: 60%;
   flex-shrink: 0;
   display: flex;
   align-items: center;
+  align-self: center;
 }
 .value-card-body .value-jars img {
   width: 100%;
@@ -365,18 +371,18 @@ h1 {
   display: block;
 }
 
-.value-stats { margin-top: 0.4rem; }
+.value-stats { margin-top: 0.5rem; }
 
 .value-stat-primary {
   margin: 0 0 0.1rem;
-  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
   font-weight: 700;
   color: #fff;
 }
 
 .value-stat-result {
   margin: 0;
-  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
   font-weight: 700;
 }
 
@@ -423,10 +429,10 @@ h1 {
   background: #373737;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  padding: 1rem 1.2rem;
+  padding: 1.1rem 1.3rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0;
 }
 
 .value-card.highlight {
