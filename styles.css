@@ -800,12 +800,12 @@ h1 {
 /* Two-column layout: paragraphs left, cards right — centered vertically */
 .etf-layout {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: clamp(3rem, 6vw, 6rem);
   align-items: center;
 }
 
-/* Left column: title at top, paragraphs with generous spacing */
+/* Left column: paragraphs */
 .etf-left {
   display: flex;
   flex-direction: column;
@@ -822,10 +822,10 @@ h1 {
 }
 
 .etf-left p {
-  margin: 0 0 var(--space-5);
-  font-size: clamp(1.15rem, 1.7vw, 1.35rem);
+  margin: 0 0 var(--space-4);
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 .etf-left p:last-child { margin-bottom: 0; }
@@ -834,27 +834,27 @@ h1 {
 .etf-cards {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .etf-card {
   background: #fffaf6;
   border: 1px solid rgba(177, 85, 68, 0.2);
-  border-radius: 18px;
-  padding: var(--space-3) var(--space-5);
+  border-radius: 14px;
+  padding: 0.75rem 1.5rem;
 }
 
 .etf-card h3 {
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
   font-weight: 700;
-  margin: 0 0 var(--space-2);
+  margin: 0 0 0.35rem;
 }
 
 .etf-card p {
   margin: 0;
-  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-  line-height: 1.5;
+  font-size: clamp(0.78rem, 0.95vw, 0.88rem);
+  line-height: 1.45;
 }
 
 #waitlist {
