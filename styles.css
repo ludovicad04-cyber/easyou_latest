@@ -800,9 +800,9 @@ h1 {
 /* Two-column layout: left text (title + paragraphs), right cards */
 .etf-layout {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
+  grid-template-columns: 1fr 1fr;
   gap: clamp(3rem, 6vw, 6rem);
-  align-items: center;
+  align-items: start;
 }
 
 /* Left column: title at top, paragraphs with generous spacing */
@@ -816,8 +816,9 @@ h1 {
 .etf-title {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 600;
-  font-size: clamp(2.2rem, 4.8vw, 4rem);
-  margin: 0 0 var(--space-5);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1.05;
+  margin: 0 0 var(--space-6);
 }
 
 .etf-left p {
@@ -834,13 +835,14 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  justify-content: center;
 }
 
 .etf-card {
   background: #fffaf6;
   border: 1px solid rgba(177, 85, 68, 0.2);
   border-radius: 16px;
-  padding: var(--space-6) var(--space-5);
+  padding: var(--space-4) var(--space-5);
 }
 
 .etf-card h3 {
