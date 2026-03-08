@@ -176,23 +176,76 @@ document.getElementById('waitlistForm').addEventListener('submit', async functio
     const data = await res.json().catch(() => null);
     console.log('API response:', data);
 
-    if (res.ok) {
-      const position = getWaitlistCount() + 1;
-      toast.textContent = `✓ Sei il #${position.toLocaleString('it-IT')} della lista!`;
-      this.reset();
-    } else if (res.status === 409) {
-      toast.textContent = '✓ Sei già in lista! Ti avviseremo presto.';
+    if (res.ok || res.status === 409) {
+      showSignupModal(email, getWaitlistCount());
       this.reset();
     } else {
       toast.textContent = `Errore ${res.status}. Riprova più tardi.`;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4500);
     }
   } catch (err) {
     console.error('Fetch error:', err);
     toast.textContent = 'Qualcosa è andato storto. Riprova più tardi.';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4500);
   }
+});
 
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 4500);
+// Signup success modal
+function showSignupModal(email, position) {
+  document.getElementById('modal-email-val').textContent = email;
+  document.getElementById('modal-avatar').textContent = email.charAt(0).toUpperCase();
+  document.getElementById('modal-share-url').value = window.location.origin || 'https://easyouapp.com';
+
+  const posEl = document.getElementById('modal-pos-num');
+  const duration = 1200;
+  const start = performance.now();
+  function tick(now) {
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    posEl.textContent = Math.round(eased * position).toLocaleString('it-IT');
+    if (t < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  document.getElementById('signup-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSignupModal() {
+  document.getElementById('signup-modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('signup-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeSignupModal();
+});
+document.querySelector('.modal-close').addEventListener('click', closeSignupModal);
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeSignupModal();
+});
+document.getElementById('modal-not-you').addEventListener('click', function(e) {
+  e.preventDefault();
+  closeSignupModal();
+  document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => document.getElementById('email').focus(), 600);
+});
+
+document.getElementById('modal-share-btn').addEventListener('click', function() {
+  const url = document.getElementById('modal-share-url').value;
+  if (navigator.share) {
+    navigator.share({
+      title: 'easyou — Semplice, per scelta.',
+      text: "Iscriviti alla lista d'attesa di easyou, l'app made in Italy per investire con semplicità.",
+      url
+    }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(url).then(() => {
+      this.textContent = '✓ Link copiato!';
+      setTimeout(() => { this.textContent = 'Invitali tutti'; }, 2000);
+    }).catch(() => {});
+  }
 });
 
 // Nav border color on scroll

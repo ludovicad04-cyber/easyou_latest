@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=73">
+  <link rel="stylesheet" href="styles.css?v=74">
 </head>
 <body>
   <div id="cursor"></div>
@@ -161,7 +161,7 @@
         <div class="etf-cards">
           <article class="etf-card reveal">
             <h3 class="text-orange">Distribuiscono il rischio</h3>
-            <p>Se un'azienda va male, l'impatto è compensato dalle altre presenti nel fondo. Non stai investendo in un'azienda singola.</p>
+            <p>Se un'azienda va male, l'impatto è compensato dalle altre presenti nel fondo. <br>Non stai investendo in un'azienda singola.</p>
           </article>
           <article class="etf-card reveal">
             <h3 class="text-orange">Facili da gestire</h3>
@@ -267,6 +267,31 @@
     </div>
     <p class="footer-copy">© 2026 easyou. Made in Italy.</p>
   </footer>
+
+  <!-- Signup success modal -->
+  <div id="signup-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-greeting">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Chiudi">&times;</button>
+      <div class="modal-left">
+        <h2 class="modal-greeting" id="modal-greeting">Grazie!</h2>
+        <p class="modal-added">Sei stato aggiunto alla lista d'attesa.</p>
+        <div class="modal-email-row">
+          <span class="modal-email-text">Registrazione effettuata a nome di <strong id="modal-email-val"></strong> — <a class="modal-not-you" id="modal-not-you" href="#">Non sei tu?</a></span>
+          <span class="modal-avatar" id="modal-avatar">G</span>
+        </div>
+        <p class="modal-invite-q">Vuoi provare Easyou prima di tutti?</p>
+        <p class="modal-invite-cta"><strong>Condividi l'invito con chi vuoi:<br><span class="text-orange">più inviti, più sali in lista.</span></strong></p>
+        <div class="modal-share">
+          <input type="text" class="modal-share-input" id="modal-share-url" readonly>
+          <button type="button" class="modal-share-btn" id="modal-share-btn">Invitali tutti</button>
+        </div>
+      </div>
+      <div class="modal-right">
+        <p class="modal-pos-num" id="modal-pos-num">0</p>
+        <p class="modal-pos-label">persone in lista<br>prima di te</p>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
