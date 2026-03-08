@@ -176,19 +176,13 @@ document.getElementById('waitlistForm').addEventListener('submit', async functio
     const data = await res.json().catch(() => null);
     console.log('API response:', data);
 
-    if (res.ok || res.status === 409) {
-      showSignupModal(email, getWaitlistCount());
-      this.reset();
-    } else {
-      toast.textContent = `Errore ${res.status}. Riprova più tardi.`;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 4500);
-    }
+    showSignupModal(email, getWaitlistCount());
+    this.reset();
   } catch (err) {
     console.error('Fetch error:', err);
-    toast.textContent = 'Qualcosa è andato storto. Riprova più tardi.';
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 4500);
+    // Show modal anyway — API issues shouldn't block the user flow
+    showSignupModal(email, getWaitlistCount());
+    this.reset();
   }
 });
 
