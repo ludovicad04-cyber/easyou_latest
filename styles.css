@@ -822,8 +822,8 @@ h1 {
 }
 
 .etf-left p {
-  margin: 0 0 var(--space-4);
-  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  margin: 0 0 var(--space-5);
+  font-size: clamp(1.15rem, 1.7vw, 1.35rem);
   font-weight: 400;
   line-height: 1.65;
 }
@@ -834,23 +834,28 @@ h1 {
 .etf-cards {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  justify-content: center;
+  gap: var(--space-5);
 }
 
 .etf-card {
   background: #fffaf6;
   border: 1px solid rgba(177, 85, 68, 0.2);
-  border-radius: 16px;
-  padding: var(--space-4) var(--space-5);
+  border-radius: 18px;
+  padding: var(--space-5) var(--space-5);
 }
 
 .etf-card h3 {
   font-family: "Plus Jakarta Sans", sans-serif;
-  margin: 0 0 var(--space-2);
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  margin: 0 0 var(--space-3);
 }
 
-.etf-card p { margin: 0; }
+.etf-card p {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.6;
+}
 
 #waitlist {
   background: #111;
