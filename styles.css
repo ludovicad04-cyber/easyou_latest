@@ -840,7 +840,7 @@ h1 {
   background: #fffaf6;
   border: 1px solid rgba(177, 85, 68, 0.2);
   border-radius: 16px;
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-6) var(--space-5);
 }
 
 .etf-card h3 {
