@@ -800,7 +800,7 @@ h1 {
 /* Two-column layout: left text (title + paragraphs), right cards */
 .etf-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: clamp(3rem, 6vw, 6rem);
   align-items: start;
 }
