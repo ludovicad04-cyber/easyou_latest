@@ -189,7 +189,7 @@ document.getElementById('waitlistForm').addEventListener('submit', async functio
 // Signup success modal
 function showSignupModal(email, position) {
   document.getElementById('modal-email-val').textContent = email;
-  document.getElementById('modal-avatar').textContent = email.charAt(0).toUpperCase();
+  document.getElementById('modal-avatar').textContent = '';
   document.getElementById('modal-share-url').value = window.location.origin || 'https://easyouapp.com';
 
   const posEl = document.getElementById('modal-pos-num');
@@ -222,8 +222,10 @@ document.addEventListener('keydown', function(e) {
 document.getElementById('modal-not-you').addEventListener('click', function(e) {
   e.preventDefault();
   closeSignupModal();
-  document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
-  setTimeout(() => document.getElementById('email').focus(), 600);
+  setTimeout(() => {
+    document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => document.getElementById('email').focus(), 500);
+  }, 50);
 });
 
 document.getElementById('modal-share-btn').addEventListener('click', function() {
