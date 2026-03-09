@@ -1414,7 +1414,7 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
 
   /* ── Waitlist ── */
   .waitlist-main { grid-template-columns: 1fr; }
-  .waitlist-counter { text-align: left; }
+  .waitlist-counter { text-align: center; }
   .waitlist-position-num { font-size: clamp(3.5rem, 18vw, 5rem); }
   .waitlist-form { flex-direction: column; }
   .waitlist-form button { width: 100%; }
