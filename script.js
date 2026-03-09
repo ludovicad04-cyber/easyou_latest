@@ -131,12 +131,19 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 
 // Waitlist counter
-// ─── Aggiorna WAITLIST_BASE_COUNT con il numero reale quando hai il database ───
-const WAITLIST_BASE_COUNT = 31;          // iscritti al lancio
-const WAITLIST_START_DATE = new Date('2026-02-20');
-const WAITLIST_DAILY_GROWTH = 9;         // stima crescita giornaliera
+let liveCount = null;
+
+fetch('https://easyou-mvp-api-production.up.railway.app/api/waiting-list/count')
+  .then(r => r.json())
+  .then(d => { if (typeof d.count === 'number') liveCount = d.count; })
+  .catch(() => {});
 
 function getWaitlistCount() {
+  if (liveCount !== null) return liveCount;
+  // fallback simulato se l'API non risponde
+  const WAITLIST_BASE_COUNT = 31;
+  const WAITLIST_START_DATE = new Date('2026-02-20');
+  const WAITLIST_DAILY_GROWTH = 9;
   const days = Math.max(0, Math.floor((Date.now() - WAITLIST_START_DATE) / 86400000));
   return WAITLIST_BASE_COUNT + days * WAITLIST_DAILY_GROWTH;
 }
