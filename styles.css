@@ -1336,11 +1336,21 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   section { padding: calc(var(--space-8) + 1rem) var(--space-3) var(--space-6); }
 
   /* ── Hero ── */
-  #hero { min-height: 100svh; }
+  #hero {
+    min-height: 100svh;
+    padding: 120px var(--space-4) var(--space-7);
+  }
+  .hero-content { padding: 0; }
   .hero-brand { height: 56px; width: auto; max-width: 88%; }
+
+  /* ── Manifesto ── */
+  #manifesto { padding: var(--space-7) var(--space-3); }
+  .manifesto-indent { padding-left: 0; }
+  .manifesto-text br { display: none; }
 
   /* ── Value cards ── */
   .value-card { padding: var(--space-4) var(--space-3); }
+  .value-card-text h3 br { display: none; }
 
   /* ── Come funziona ── */
   #how {
@@ -1368,6 +1378,13 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   }
   .step-scroll-item:last-child { border-bottom: none; }
   .step-scroll-copy { max-width: none; }
+  .step-scroll-copy p br { display: none; }
+
+  /* ── ETF ── */
+  .etf-title { padding-left: 0; }
+  .etf-left { padding-left: 0; }
+  .etf-title br { display: none; }
+  .etf-left p br { display: none; }
 
   /* ── Waitlist ── */
   .waitlist-main { grid-template-columns: 1fr; }
@@ -1375,10 +1392,26 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   .waitlist-position-num { font-size: clamp(3.5rem, 18vw, 5rem); }
   .waitlist-form { flex-direction: column; }
   .waitlist-form button { width: 100%; }
+  .waitlist-pledge p br { display: none; }
+
+  /* ── Report ── */
+  .report-body br { display: none; }
+  .report-bottom { grid-template-columns: 1fr; }
+  .report-btn { justify-self: stretch; width: 100%; text-align: center; }
+  .report-cta-text br { display: none; }
 
   /* ── FAQ ── */
   .faq-sticky { position: relative; top: auto; margin-bottom: var(--space-4); }
+  .faq-layout { gap: var(--space-4); }
   .faq-item.open .faq-answer { max-height: 600px; }
+
+  /* ── Modal ── */
+  .modal-card {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+  .modal-right { min-width: 0; }
 
   /* ── Footer ── */
   footer { padding: var(--space-5) var(--space-3); }
