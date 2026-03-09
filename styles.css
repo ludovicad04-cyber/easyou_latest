@@ -825,7 +825,7 @@ h1 {
 
 .etf-left p {
   margin: 0 0 var(--space-2);
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-size: clamp(1.15rem, 1.7vw, 1.35rem);
   font-weight: 400;
   line-height: 1.6;
 }
