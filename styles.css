@@ -843,21 +843,21 @@ h1 {
   background: #fffaf6;
   border: 1px solid rgba(177, 85, 68, 0.2);
   border-radius: 14px;
-  padding: 0.75rem 1.5rem;
+  padding: 1.1rem 1.8rem;
 }
 
 .etf-card h3,
 .value-card h3 {
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
   font-weight: 700;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.45rem;
 }
 
 .etf-card p {
   margin: 0;
-  font-size: clamp(0.78rem, 0.95vw, 0.88rem);
-  line-height: 1.45;
+  font-size: clamp(0.88rem, 1.05vw, 0.98rem);
+  line-height: 1.5;
 }
 
 #waitlist {
