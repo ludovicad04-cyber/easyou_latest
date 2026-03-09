@@ -69,7 +69,7 @@ let overDarkEl   = false;
 
 function updateCursorColor() {
   rafPending = false;
-  document.body.classList.toggle('cursor-black', overOrangeEl && !overDarkEl);
+  document.body.classList.toggle('cursor-black', overOrangeEl || isInWaitlist());
 }
 
 function scheduleUpdate() {

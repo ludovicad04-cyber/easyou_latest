@@ -861,20 +861,34 @@ h1 {
 }
 
 #waitlist {
-  background: #111;
+  background: var(--color-primary);
   color: #fff;
   text-align: left;
   font-family: "Plus Jakarta Sans", sans-serif;
+  position: relative;
+  overflow: hidden;
 }
+
+#waitlist::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("brand identity/background.png") center/cover no-repeat;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#waitlist > * { position: relative; z-index: 1; }
 
 #waitlist h2 {
   font-family: "Plus Jakarta Sans", sans-serif;
-  color: var(--color-primary);
+  color: #fff;
   margin: 0 0 var(--space-4);
 }
 
 .waitlist-subtitle {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   margin: 0 0 var(--space-6);
 }
@@ -907,13 +921,13 @@ h1 {
 }
 .waitlist-form input {
   flex: 1;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.22);
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
-.waitlist-form input::placeholder { color: rgba(255, 255, 255, 0.45); }
+.waitlist-form input::placeholder { color: rgba(255, 255, 255, 0.6); }
 .waitlist-form button {
-  background: var(--color-primary);
+  background: #1e1e1e;
   color: #fff;
   font-weight: 600;
   white-space: nowrap;
@@ -942,13 +956,13 @@ h1 {
 
 .waitlist-position-label {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   margin: 0.5rem 0 0;
 }
 
 .waitlist-pledge {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 16px;
   padding: var(--space-5) var(--space-6);
   text-align: center;
@@ -958,7 +972,7 @@ h1 {
   margin: 0;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 #report {
