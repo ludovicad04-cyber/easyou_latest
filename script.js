@@ -88,15 +88,9 @@ window.addEventListener('resize', scheduleUpdate);
 scheduleUpdate();
 
 // Switch cursor to dark on any orange-background element
-document.querySelectorAll('.btn-primary, .nav-cta, .hero-visual img, .hero-app-icon').forEach(el => {
+document.querySelectorAll('.btn-primary, .nav-cta, .hero-visual img, .hero-app-icon, .waitlist-form button').forEach(el => {
   el.addEventListener('mouseenter', () => { overOrangeEl = true;  scheduleUpdate(); });
   el.addEventListener('mouseleave', () => { overOrangeEl = false; scheduleUpdate(); });
-});
-
-// Override back to orange on dark elements inside orange areas
-document.querySelectorAll('.waitlist-form button').forEach(el => {
-  el.addEventListener('mouseenter', () => { overDarkEl = true;  scheduleUpdate(); });
-  el.addEventListener('mouseleave', () => { overDarkEl = false; scheduleUpdate(); });
 });
 
 // Scroll reveal
