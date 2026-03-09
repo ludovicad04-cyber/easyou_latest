@@ -2,6 +2,7 @@
   font-family: "Qurova";
   src: url("brand identity/Qurova-VF.ttf") format("truetype");
   font-weight: 100 900;
+  font-display: swap;
   font-style: normal;
   font-display: swap;
 }
