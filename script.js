@@ -357,9 +357,13 @@ void getRefY;
   if (!section) return;
 
   const STEPS = 3;
-  const ANIM_MS = 550;
+  const ANIM_MS = 600;
+  const THRESHOLD = 30;   // delta minimo per avanzare uno step
   let currentStep = 0;
   let isAnimating = false;
+  let cooldown = false;   // true durante l'inerzia del trackpad
+  let accumulated = 0;
+  let wheelEndTimer = null;
 
   function sectionTop() {
     return section.getBoundingClientRect().top + window.scrollY;
@@ -370,7 +374,6 @@ void getRefY;
   }
 
   function stepScrollTop(step) {
-    // Each step occupies scrollable/STEPS px of budget
     return sectionTop() + scrollable() * step / STEPS;
   }
 
@@ -391,20 +394,31 @@ void getRefY;
     if (!inStickyZone()) return;
 
     e.preventDefault();
-    if (isAnimating) return;
 
-    const dir = e.deltaY > 0 ? 1 : -1;
+    // Rileva la fine del gesto (dita sollevate = pausa > 150ms senza eventi wheel)
+    clearTimeout(wheelEndTimer);
+    wheelEndTimer = setTimeout(() => {
+      cooldown = false;
+      accumulated = 0;
+    }, 150);
+
+    if (isAnimating || cooldown) return;
+
+    accumulated += e.deltaY;
+    if (Math.abs(accumulated) < THRESHOLD) return;
+
+    const dir = accumulated > 0 ? 1 : -1;
+    cooldown = true;   // blocca l'inerzia del trackpad
+    accumulated = 0;
     const next = currentStep + dir;
 
     if (next < 0) {
-      // Scroll up above section
       isAnimating = true;
       window.scrollTo({ top: sectionTop() - 10, behavior: 'smooth' });
       setTimeout(() => { isAnimating = false; }, ANIM_MS);
       return;
     }
     if (next >= STEPS) {
-      // All steps done — release scroll past section
       isAnimating = true;
       window.scrollTo({ top: sectionTop() + scrollable() + 10, behavior: 'smooth' });
       setTimeout(() => { isAnimating = false; }, ANIM_MS);
