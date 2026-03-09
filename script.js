@@ -65,11 +65,11 @@ function isInWaitlist() {
 let rafPending = false;
 let lastPointerY = null;
 let overOrangeEl = false;
-let overDarkEl   = false;
+let overWaitlistDarkEl = false;
 
 function updateCursorColor() {
   rafPending = false;
-  document.body.classList.toggle('cursor-black', overOrangeEl || isInWaitlist());
+  document.body.classList.toggle('cursor-black', overOrangeEl || (isInWaitlist() && !overWaitlistDarkEl));
 }
 
 function scheduleUpdate() {
@@ -88,9 +88,15 @@ window.addEventListener('resize', scheduleUpdate);
 scheduleUpdate();
 
 // Switch cursor to dark on any orange-background element
-document.querySelectorAll('.btn-primary, .nav-cta, .hero-visual img, .hero-app-icon, .waitlist-form button').forEach(el => {
+document.querySelectorAll('.btn-primary, .nav-cta, .hero-visual img, .hero-app-icon').forEach(el => {
   el.addEventListener('mouseenter', () => { overOrangeEl = true;  scheduleUpdate(); });
   el.addEventListener('mouseleave', () => { overOrangeEl = false; scheduleUpdate(); });
+});
+
+// Waitlist dark button: cursor stays orange (overrides isInWaitlist black)
+document.querySelectorAll('.waitlist-form button').forEach(el => {
+  el.addEventListener('mouseenter', () => { overWaitlistDarkEl = true;  scheduleUpdate(); });
+  el.addEventListener('mouseleave', () => { overWaitlistDarkEl = false; scheduleUpdate(); });
 });
 
 // Scroll reveal
