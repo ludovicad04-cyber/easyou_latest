@@ -1,6 +1,9 @@
 // Disabilita il ripristino automatico dello scroll al refresh
 history.scrollRestoration = 'manual';
 
+// Referral code dalla query string (es. ?referral_code=XXXXXX)
+const incomingReferral = new URLSearchParams(window.location.search).get('referral_code');
+
 // Custom cursor
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
@@ -166,30 +169,35 @@ document.getElementById('waitlistForm').addEventListener('submit', async functio
   const toast = document.getElementById('toast');
 
   try {
+    const body = { email };
+    if (incomingReferral) body.referralCode = incomingReferral;
+
     const res = await fetch('https://easyou-mvp-api-production.up.railway.app/api/waiting-list/join', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
+      body: JSON.stringify(body)
     });
 
     console.log('API status:', res.status);
     const data = await res.json().catch(() => null);
     console.log('API response:', data);
 
-    showSignupModal(email, getWaitlistCount());
+    showSignupModal(email, getWaitlistCount(), data?.referralCode);
     this.reset();
   } catch (err) {
     console.error('Fetch error:', err);
     // Show modal anyway — API issues shouldn't block the user flow
-    showSignupModal(email, getWaitlistCount());
+    showSignupModal(email, getWaitlistCount(), null);
     this.reset();
   }
 });
 
 // Signup success modal
-function showSignupModal(email, position) {
+function showSignupModal(email, position, referralCode) {
   document.getElementById('modal-email-val').textContent = email;
-  document.getElementById('modal-share-url').value = window.location.origin || 'https://easyouapp.com';
+  const base = window.location.origin || 'https://easyouapp.com';
+  const shareUrl = referralCode ? `${base}?referral_code=${referralCode}` : base;
+  document.getElementById('modal-share-url').value = shareUrl;
 
   const posEl = document.getElementById('modal-pos-num');
   const duration = 1200;
@@ -232,7 +240,7 @@ document.getElementById('modal-share-btn').addEventListener('click', function() 
   if (navigator.share) {
     navigator.share({
       title: 'easyou — Semplice, per scelta.',
-      text: "Iscriviti alla lista d'attesa di easyou, l'app made in Italy per investire con semplicità.",
+      text: "Hai mai pensato a un modo diverso di gestire i tuoi soldi? Easyou sta arrivando. Entra in lista d’attesa dal link:",
       url
     }).catch(() => {});
   } else {
