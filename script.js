@@ -258,7 +258,7 @@ document.getElementById('modal-share-btn').addEventListener('click', function() 
   if (navigator.share) {
     navigator.share({
       title: 'easyou — Semplice, per scelta.',
-      text: "Hai mai pensato a un modo diverso di gestire i tuoi soldi? Easyou sta arrivando. Entra in lista d’attesa dal link:",
+      text: "Hai mai pensato a un modo diverso di gestire i tuoi soldi? Easyou sta arrivando. Entra in lista d’attesa dal link.",
       url
     }).catch(() => {});
   } else {
