@@ -187,9 +187,12 @@ document.getElementById('waitlistForm').addEventListener('submit', async functio
 
     console.log('API status:', res.status);
     const data = await res.json().catch(() => null);
-    console.log('API response:', data);
+    console.log('API response (full):', JSON.stringify(data));
 
-    showSignupModal(email, getWaitlistCount(), data?.referralCode);
+    const referralCode = data?.referralCode ?? data?.referral_code ?? data?.data?.referralCode ?? null;
+    console.log('Referral code estratto:', referralCode);
+
+    showSignupModal(email, getWaitlistCount(), referralCode);
     this.reset();
   } catch (err) {
     console.error('Fetch error:', err);
