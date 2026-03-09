@@ -2,14 +2,35 @@
 system_prompt.md
 easyou_landing_V1_1502_improved_v7.html
 
-# Immagini di backup (non usate nel sito)
-brand identity/extracted/jars_gain_orig.png
-brand identity/extracted/jars_loss_orig.png
-
-# File di riferimento non necessari online
-brand identity/Easyou_Simple_Investing.pdf
-brand identity/color palette.png
+# Immagini non usate nel sito
 brand identity/Mountain_Scene 1 copy.png
+brand identity/Mountain_Scene 2.png
+brand identity/ChatGPT Image Feb 20, 2026, 10_38_31 AM.png
+brand identity/jars.png
+brand identity/jars_gain.png
+brand identity/jars_loss.png
+brand identity/jars_gain.png
+brand identity/investimento.png
+brand identity/non_investimento.png
+brand identity/App_Icon_1.png
+brand identity/App_Icon_2.png
+brand identity/Bento_box_app.png
+brand identity/color palette.png
+brand identity/km4.svg
+brand identity/easyou_dark.svg
+brand identity/easyou_orange.svg
+brand identity/palette.scss
+brand identity/extracted/
+
+# Originali sostituiti da WebP ottimizzati
+brand identity/background.png
+brand identity/jars_left.png
+brand identity/jars_right.png
+
+# Video e PDF non usati nel sito
+brand identity/5s auto 720p Video 01.mp4
+brand identity/Easyou_Simple_Investing.pdf
 
 # macOS
 .DS_Store
+.vercel
