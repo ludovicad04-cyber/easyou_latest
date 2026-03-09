@@ -556,7 +556,7 @@ h1 {
   margin: var(--space-4) 0 var(--space-2);
 }
 
-.value-disclaimer { font-size: 0.68rem; opacity: 0.7; margin: var(--space-1) 0 0; line-height: 1.45; }
+.value-disclaimer { font-size: 0.55rem; opacity: 0.6; margin: var(--space-1) 0 0; line-height: 1.4; }
 
 @keyframes value-marquee-move {
   from { transform: translateX(0); }
