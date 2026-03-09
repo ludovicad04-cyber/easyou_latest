@@ -321,14 +321,10 @@ h1 {
 .value-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
+  grid-template-rows: auto auto;
+  column-gap: var(--space-4);
+  row-gap: var(--space-3);
   align-items: stretch;
-}
-
-.value-card-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
 }
 
 .value-card-label {
@@ -341,10 +337,9 @@ h1 {
 
 .value-card-body {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: 0.75rem;
   margin: 0.5rem 0 0;
-  flex: 1;
 }
 
 .value-card-text {
@@ -365,17 +360,19 @@ h1 {
 }
 
 .value-card-body .value-jars {
-  width: 54%;
+  width: 50%;
   flex-shrink: 0;
-  overflow: hidden;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 260px;
 }
 .value-card-body .value-jars img {
-  width: 100%;
   height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
   display: block;
-  object-fit: cover;
-  object-position: center;
 }
 
 .value-stats { margin-top: 0.5rem; }
@@ -440,7 +437,6 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1;
   gap: 0;
 }
 
@@ -1373,8 +1369,8 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
     grid-template-columns: 1fr;
   }
 
-  .value-grid { grid-template-columns: 1fr; }
-  .value-card-body .value-jars { width: 42%; }
+  .value-grid { grid-template-columns: 1fr; grid-template-rows: auto auto auto auto; }
+  .value-card-body .value-jars { width: 42%; height: 220px; }
 
   .value-vs {
     width: 100%;
