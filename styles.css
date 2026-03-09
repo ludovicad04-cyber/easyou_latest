@@ -344,6 +344,7 @@ h1 {
   align-items: stretch;
   gap: 0.75rem;
   margin: 0.5rem 0 0;
+  flex: 1;
 }
 
 .value-card-text {
@@ -366,14 +367,15 @@ h1 {
 .value-card-body .value-jars {
   width: 54%;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
 }
 .value-card-body .value-jars img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .value-stats { margin-top: 0.5rem; }
@@ -437,6 +439,8 @@ h1 {
   padding: 1.1rem 1.3rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
   gap: 0;
 }
 
