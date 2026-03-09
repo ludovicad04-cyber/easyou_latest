@@ -141,8 +141,8 @@ section {
   max-width: 92%;
   display: block;
   margin: 0 auto;
-  opacity: 0.35;
-  mix-blend-mode: overlay;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
 }
 
 .hero-claim {
