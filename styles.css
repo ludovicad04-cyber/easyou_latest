@@ -817,7 +817,7 @@ h1 {
 .etf-title {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 600;
-  font-size: clamp(4rem, 6.5vw, 7.2rem);
+  font-size: clamp(5rem, 7.5vw, 8.5rem);
   line-height: 1.05;
   margin: 0 0 var(--space-6);
   padding-left: clamp(1.5rem, 4vw, 4rem);
