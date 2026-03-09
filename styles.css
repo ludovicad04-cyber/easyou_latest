@@ -372,7 +372,6 @@ h1 {
   max-width: none;
   object-fit: contain;
   display: block;
-  transform: translateX(2rem);
 }
 
 .value-stats { margin-top: 0.5rem; }
