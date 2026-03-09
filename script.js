@@ -179,7 +179,7 @@ document.getElementById('waitlistForm').addEventListener('submit', async functio
     const body = { email };
     if (incomingReferral) body.referralCode = incomingReferral;
 
-    const res = await fetch('https://easyou-mvp-api-production.up.railway.app/api/waiting-list/join', {
+    const res = await fetch('/api/join', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
