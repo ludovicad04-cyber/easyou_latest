@@ -189,7 +189,6 @@ document.getElementById('waitlistForm').addEventListener('submit', async functio
 // Signup success modal
 function showSignupModal(email, position) {
   document.getElementById('modal-email-val').textContent = email;
-  document.getElementById('modal-avatar').textContent = '';
   document.getElementById('modal-share-url').value = window.location.origin || 'https://easyouapp.com';
 
   const posEl = document.getElementById('modal-pos-num');
