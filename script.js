@@ -205,6 +205,14 @@ function showSignupModal(email, position, referralCode) {
   const base = window.location.origin || 'https://easyouapp.com';
   const shareUrl = referralCode ? `${base}?referral_code=${referralCode}` : base;
   document.getElementById('modal-share-url').value = shareUrl;
+  const codeEl = document.getElementById('modal-referral-code');
+  const codeRow = document.getElementById('modal-code-row');
+  if (referralCode) {
+    codeEl.textContent = referralCode;
+    codeRow.style.display = 'flex';
+  } else {
+    codeRow.style.display = 'none';
+  }
 
   const posEl = document.getElementById('modal-pos-num');
   const duration = 1200;
