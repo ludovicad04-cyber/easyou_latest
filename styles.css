@@ -1063,9 +1063,21 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 1rem;
-  line-height: 1;
+  position: relative;
+  font-size: 0;
 }
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: currentColor;
+  border-radius: 1px;
+}
+.faq-icon::before { width: 10px; height: 1.5px; }
+.faq-icon::after  { width: 1.5px; height: 10px; }
 .faq-answer {
   max-height: 0;
   overflow: hidden;
