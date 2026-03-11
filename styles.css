@@ -141,7 +141,7 @@ section {
   max-width: 92%;
   display: block;
   margin: 0 auto;
-  opacity: 0.18;
+  opacity: 0.38;
   mix-blend-mode: soft-light;
 }
 
@@ -792,6 +792,8 @@ h1 {
   display: block;
 }
 
+.step-mobile-img { display: none; }
+
 .text-orange { color: var(--color-primary); }
 
 #etf { background: #fff; }
@@ -1439,6 +1441,12 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   .step-scroll-item:last-child { border-bottom: none; }
   .step-scroll-copy { max-width: none; }
   .step-scroll-copy p br { display: none; }
+  .step-mobile-img {
+    display: block;
+    width: 60%;
+    max-width: 240px;
+    margin: var(--space-4) auto 0;
+  }
 
   /* ── ETF ── */
   .etf-title { padding-left: 0; }
