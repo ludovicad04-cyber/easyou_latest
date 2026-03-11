@@ -443,6 +443,9 @@ h1 {
   justify-content: space-between;
   gap: 0;
   overflow: hidden;
+  /* Fix iOS Safari overflow:hidden + border-radius + transform bug */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  isolation: isolate;
 }
 
 .value-card.highlight {
