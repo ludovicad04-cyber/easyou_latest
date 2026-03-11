@@ -1110,6 +1110,45 @@ footer {
   display: block;
   margin: 0 auto var(--space-3);
 }
+.footer-contact {
+  margin: 0 auto var(--space-5);
+}
+.footer-contact-q {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  margin: 0 0 0.3rem;
+}
+.footer-contact-mail {
+  font-size: 0.95rem;
+  margin: 0 0 var(--space-4);
+  color: rgba(255,255,255,0.7);
+}
+.footer-contact-mail a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+.footer-contact-social {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0 0 0.6rem;
+}
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.footer-social a:hover { color: #fff; }
+
 .footer-disclaimer {
   max-width: 680px;
   margin: 0 auto var(--space-4);
