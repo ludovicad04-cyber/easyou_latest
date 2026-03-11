@@ -1443,9 +1443,9 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   .step-scroll-copy p br { display: none; }
   .step-mobile-img {
     display: block;
-    width: 60%;
-    max-width: 240px;
-    margin: var(--space-4) auto 0;
+    width: 82%;
+    max-width: 340px;
+    margin: var(--space-5) auto 0;
   }
 
   /* ── ETF ── */
