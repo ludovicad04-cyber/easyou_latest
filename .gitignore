@@ -34,3 +34,4 @@ brand identity/Easyou_Simple_Investing.pdf
 # macOS
 .DS_Store
 .vercel
+node_modules/
