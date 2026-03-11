@@ -868,7 +868,7 @@ h1 {
   font-family: "Plus Jakarta Sans", sans-serif;
   position: relative;
   overflow: hidden;
-  padding-top: var(--space-9);
+  padding-top: calc(var(--space-9) * 1.6);
   padding-bottom: var(--space-9);
 }
 
@@ -977,18 +977,15 @@ h1 {
 }
 
 .waitlist-pledge {
-  background: rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 16px;
-  padding: var(--space-5) var(--space-6);
   text-align: center;
 }
 
 .waitlist-pledge p {
   margin: 0;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 400;
 }
 
 #report {
