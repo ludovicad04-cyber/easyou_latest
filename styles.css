@@ -1446,14 +1446,17 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
     display: block;
     background: #f5f2ee;
     margin: var(--space-5) calc(-1 * var(--space-3)) 0;
-    padding: 2.5rem 1rem 0;
     border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    height: 120vw;
+    max-height: 520px;
   }
   .step-mobile-img {
     display: block;
-    width: 78%;
-    max-width: 320px;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
   }
 
   /* ── ETF ── */
