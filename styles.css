@@ -864,10 +864,12 @@ h1 {
 #waitlist {
   background: var(--color-primary);
   color: #fff;
-  text-align: left;
+  text-align: center;
   font-family: "Plus Jakarta Sans", sans-serif;
   position: relative;
   overflow: hidden;
+  padding-top: var(--space-9);
+  padding-bottom: var(--space-9);
 }
 
 #waitlist::before {
@@ -905,15 +907,17 @@ h1 {
 }
 
 .waitlist-main {
-  display: grid;
-  grid-template-columns: minmax(0, 480px) auto;
-  gap: var(--space-6);
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: var(--space-5);
   margin-bottom: var(--space-5);
 }
 
 .waitlist-form-wrap {
   font-family: "Plus Jakarta Sans", sans-serif;
+  width: 100%;
+  max-width: 480px;
 }
 
 .waitlist-form {
@@ -958,7 +962,7 @@ h1 {
 
 .waitlist-position-num {
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: clamp(4.5rem, 10vw, 8rem);
+  font-size: clamp(3rem, 7vw, 5rem);
   font-weight: 700;
   color: #fff;
   line-height: 1;
@@ -1526,9 +1530,6 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   .etf-left p br { display: none; }
 
   /* ── Waitlist ── */
-  .waitlist-main { grid-template-columns: 1fr; }
-  .waitlist-counter { text-align: center; }
-  .waitlist-position-num { font-size: clamp(3.5rem, 18vw, 5rem); }
   .waitlist-form { flex-direction: column; }
   .waitlist-form button { width: 100%; }
   .waitlist-pledge p br { display: none; }
