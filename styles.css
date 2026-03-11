@@ -1457,7 +1457,7 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   .step-scroll-copy p br { display: none; }
   .step-phone-card {
     display: block;
-    margin: var(--space-5) 0 0;
+    margin: var(--space-5) calc(-2 * var(--space-3)) 0;
   }
   .step-mobile-img {
     display: block;
