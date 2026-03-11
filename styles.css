@@ -1451,6 +1451,9 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
 }
 
 @media (max-width: 760px) {
+  /* ── Section headings ── */
+  #how h2, #etf h2 { font-size: clamp(2.4rem, 8vw, 3rem); }
+
   /* ── Navigation ── */
   nav { padding: var(--space-3); justify-content: center; }
   .nav-logo { display: none; }
