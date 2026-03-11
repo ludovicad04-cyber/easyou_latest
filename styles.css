@@ -955,6 +955,13 @@ h1 {
   min-width: 180px;
 }
 
+.waitlist-counter-top {
+  position: absolute;
+  top: calc(var(--space-8) + 2rem);
+  right: var(--space-5);
+  text-align: right;
+}
+
 .waitlist-position-num {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(4.5rem, 10vw, 8rem);
