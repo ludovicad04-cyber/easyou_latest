@@ -1151,10 +1151,10 @@ footer {
 
 .footer-disclaimer {
   max-width: 680px;
-  margin: 0 auto var(--space-4);
-  font-size: 0.78rem;
+  margin: var(--space-3) auto var(--space-2);
+  font-size: 0.65rem;
   line-height: 1.6;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 .footer-copy { margin: var(--space-3) 0 0; opacity: 0.5; font-size: 0.78rem; }
 .footer-links {
