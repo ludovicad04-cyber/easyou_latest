@@ -868,8 +868,8 @@ h1 {
   font-family: "Plus Jakarta Sans", sans-serif;
   position: relative;
   overflow: hidden;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   scroll-margin-top: 72px;
 }
 
@@ -1509,7 +1509,7 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   .step-scroll-copy p br { display: none; }
   .step-phone-card {
     display: block;
-    background: #ffffff;
+    background: #faf8f4;
     margin: var(--space-5) calc(-1 * var(--space-3)) 0;
     border-radius: 20px 20px 0 0;
     padding: 2rem 1.5rem 2rem;
