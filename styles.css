@@ -868,8 +868,9 @@ h1 {
   font-family: "Plus Jakarta Sans", sans-serif;
   position: relative;
   overflow: hidden;
-  padding-top: calc(var(--space-9) * 2.2);
-  padding-bottom: calc(var(--space-9) * 2.2);
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  scroll-margin-top: 72px;
 }
 
 #waitlist::before {
