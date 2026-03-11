@@ -1371,7 +1371,20 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   }
 
   .value-grid { grid-template-columns: 1fr; grid-template-rows: auto auto auto auto; }
-  .value-card-body .value-jars { width: 42%; height: 220px; }
+  .value-card-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  .value-card-text {
+    max-width: 100%;
+    width: 100%;
+  }
+  .value-card-body .value-jars {
+    flex: 0 0 auto;
+    width: 55%;
+    height: 180px;
+    margin-top: var(--space-3);
+  }
 
   .value-vs {
     width: 100%;
