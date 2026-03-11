@@ -957,7 +957,7 @@ h1 {
 
 .waitlist-counter-top {
   position: absolute;
-  top: calc(var(--space-8) + 2rem);
+  top: calc(var(--space-8) + 5rem);
   right: var(--space-5);
   text-align: right;
 }
