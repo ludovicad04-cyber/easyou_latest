@@ -392,7 +392,7 @@ void getRefY;
   function goTo(step) {
     isAnimating = true;
     window.scrollTo({ top: stepScrollTop(step), behavior: 'smooth' });
-    setTimeout(() => { isAnimating = false; }, ANIM_MS);
+    setTimeout(() => { isAnimating = false; cooldown = false; accumulated = 0; }, ANIM_MS);
   }
 
   window.addEventListener('wheel', function (e) {
