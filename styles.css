@@ -1081,7 +1081,7 @@ h1 {
 
 .waitlist-pledge p {
   margin: 0;
-  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+  font-size: clamp(0.68rem, 0.9vw, 0.78rem);
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.75);
   font-weight: 400;
