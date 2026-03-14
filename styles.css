@@ -424,7 +424,7 @@ h1 {
 }
 
 .value-card {
-  background: linear-gradient(145deg, #3e3e3e 0%, #262626 100%);
+  background: #363636;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 1.1rem 1.3rem;
