@@ -867,9 +867,36 @@ h1 {
   font-family: "Plus Jakarta Sans", sans-serif;
   position: relative;
   overflow: hidden;
-  padding-top: 5rem;
+  padding-top: 0;
   padding-bottom: 5rem;
   scroll-margin-top: 72px;
+}
+
+.waitlist-banner {
+  margin: 0 calc(-1 * var(--space-5)) 4rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.65rem 0;
+}
+
+.waitlist-banner-track {
+  display: inline-flex;
+  animation: banner-scroll 24s linear infinite;
+}
+
+.waitlist-banner-track span {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@keyframes banner-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 #waitlist::before {
@@ -1046,9 +1073,9 @@ h1 {
 
 .waitlist-pledge p {
   margin: 0;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 400;
 }
 
