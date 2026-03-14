@@ -971,12 +971,13 @@ h1 {
 .waitlist-consent input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
-  width: 13px;
-  height: 13px;
-  min-width: 13px;
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px;
+  padding: 0 !important;
   margin-top: 2px;
   border: 1.5px solid rgba(255, 255, 255, 0.6);
-  border-radius: 3px;
+  border-radius: 3px !important;
   background: transparent;
   cursor: pointer;
   position: relative;
@@ -991,10 +992,10 @@ h1 {
 .waitlist-consent input[type="checkbox"]:checked::after {
   content: '';
   position: absolute;
-  left: 3px;
-  top: 0px;
+  left: 4px;
+  top: 1px;
   width: 4px;
-  height: 8px;
+  height: 7px;
   border: 1.5px solid #fff;
   border-top: none;
   border-left: none;
