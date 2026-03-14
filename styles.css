@@ -922,8 +922,48 @@ h1 {
 
 .waitlist-form {
   display: flex;
-  gap: var(--space-2);
+  flex-direction: column;
+  gap: 0;
   margin-bottom: 0.6rem;
+}
+
+.waitlist-consents {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.2rem;
+}
+
+.waitlist-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  cursor: pointer;
+}
+
+.waitlist-consent input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin-top: 3px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.waitlist-consent span {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.45;
+}
+
+.waitlist-consent a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.waitlist-form-row {
+  display: flex;
+  gap: var(--space-2);
 }
 
 .waitlist-form input,
@@ -1530,8 +1570,8 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   .etf-left p br { display: none; }
 
   /* ── Waitlist ── */
-  .waitlist-form { flex-direction: column; }
-  .waitlist-form button { width: 100%; }
+  .waitlist-form-row { flex-direction: column; }
+  .waitlist-form-row button { width: 100%; }
   .waitlist-pledge p br { display: none; }
 
   /* ── Report ── */
