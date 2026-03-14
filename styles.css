@@ -1508,7 +1508,7 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   }
   .step-scroll-item:last-child { border-bottom: none; }
   .step-scroll-copy { max-width: none; }
-  .step-scroll-copy p br { display: none; }
+  .step-scroll-copy p br:not(.keep) { display: none; }
   .step-phone-card {
     display: block;
     background: #faf8f4;
