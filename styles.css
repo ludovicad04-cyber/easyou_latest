@@ -942,12 +942,36 @@ h1 {
 }
 
 .waitlist-consent input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
-  margin-top: 3px;
-  accent-color: var(--color-primary);
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  margin-top: 2px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  background: transparent;
   cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.waitlist-consent input[type="checkbox"]:checked {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.waitlist-consent input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
 }
 
 .waitlist-consent span {
