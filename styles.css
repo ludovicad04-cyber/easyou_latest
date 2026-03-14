@@ -279,19 +279,9 @@ h1 {
 }
 
 #value {
-  background: var(--color-surface);
-  color: var(--color-cream);
+  background: #fff;
+  color: var(--color-text);
   position: relative;
-}
-#value::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("brand identity/background.webp") center/cover no-repeat;
-  opacity: 0.3;
-  z-index: 0;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,1) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,1) 100%);
 }
 #value > * { position: relative; z-index: 1; }
 
@@ -434,15 +424,20 @@ h1 {
 }
 
 .value-card {
-  background: #373737;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
+  background: linear-gradient(145deg, #3e3e3e 0%, #262626 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
   padding: 1.1rem 1.3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 0;
   overflow: hidden;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 24px 64px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13);
   /* Fix iOS Safari overflow:hidden + border-radius + transform bug */
   -webkit-mask-image: -webkit-radial-gradient(white, black);
   isolation: isolate;
@@ -558,7 +553,7 @@ h1 {
   margin: var(--space-4) 0 var(--space-2);
 }
 
-.value-disclaimer { font-size: 0.55rem; opacity: 0.6; margin: var(--space-1) 0 0; line-height: 1.4; }
+.value-disclaimer { font-size: 0.55rem; color: rgba(44, 44, 44, 0.45); margin: var(--space-1) 0 0; line-height: 1.4; }
 
 @keyframes value-marquee-move {
   from { transform: translateX(0); }
