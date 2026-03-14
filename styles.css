@@ -957,7 +957,7 @@ h1 {
 }
 
 .waitlist-consent a {
-  color: var(--color-primary);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: underline;
 }
 
