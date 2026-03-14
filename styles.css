@@ -257,7 +257,7 @@ h1 {
 
 #manifesto {
   background: #fff;
-  padding: var(--space-8) var(--space-5);
+  padding: var(--space-5) var(--space-5) var(--space-4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,7 +282,7 @@ h1 {
   background: #fff;
   color: var(--color-text);
   position: relative;
-  padding-top: var(--space-6);
+  padding-top: var(--space-4);
 }
 #value > * { position: relative; z-index: 1; }
 
