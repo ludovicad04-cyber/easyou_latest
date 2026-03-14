@@ -1,6 +1,16 @@
 // Disabilita il ripristino automatico dello scroll al refresh
 history.scrollRestoration = 'manual';
 
+// Messaggi di validazione checkbox in italiano
+document.querySelectorAll('.waitlist-consent input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('invalid', function() {
+    this.setCustomValidity('Spunta questa casella per procedere.');
+  });
+  cb.addEventListener('change', function() {
+    this.setCustomValidity('');
+  });
+});
+
 // Referral code dalla query string (es. ?referral_code=XXXXXX)
 const incomingReferral = new URLSearchParams(window.location.search).get('referral_code');
 
