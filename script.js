@@ -175,17 +175,6 @@ document.getElementById('waitlistForm').addEventListener('submit', async functio
   e.preventDefault();
   const email = document.getElementById('email').value;
   const toast = document.getElementById('toast');
-  const consentError = document.getElementById('consentError');
-
-  // Validazione consensi
-  const c1 = document.getElementById('consent1').checked;
-  const c2 = document.getElementById('consent2').checked;
-  if (!c1 || !c2) {
-    consentError.classList.add('visible');
-    consentError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    return;
-  }
-  consentError.classList.remove('visible');
 
   try {
     const body = { email };
