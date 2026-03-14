@@ -26,7 +26,13 @@
 }
 
 * { box-sizing: border-box; cursor: none; }
-html, body { margin: 0; padding: 0; }
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px; /* nav height desktop */
+}
+body { margin: 0; padding: 0; }
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--color-text);
@@ -869,7 +875,7 @@ h1 {
   overflow: hidden;
   padding-top: 0;
   padding-bottom: 5rem;
-  scroll-margin-top: 72px;
+  scroll-margin-top: 0;
 }
 
 .waitlist-banner {
@@ -1546,6 +1552,7 @@ body.cursor-black #cursor-ring { border-color: rgba(0, 0, 0, 0.45); }
   #how h2, #etf h2 { font-size: clamp(2.4rem, 8vw, 3rem); }
 
   /* ── Navigation ── */
+  html { scroll-padding-top: 66px; }
   nav { padding: var(--space-3); justify-content: space-between; }
   .nav-logo img { width: 34px; height: 34px; }
   .nav-cta { display: none; }
