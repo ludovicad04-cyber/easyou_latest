@@ -1,15 +1,6 @@
 // Disabilita il ripristino automatico dello scroll al refresh
 history.scrollRestoration = 'manual';
 
-// Messaggi di validazione checkbox in italiano
-document.querySelectorAll('.waitlist-consent input[type="checkbox"]').forEach(cb => {
-  cb.addEventListener('invalid', function() {
-    this.setCustomValidity('Spunta questa casella per procedere.');
-  });
-  cb.addEventListener('change', function() {
-    this.setCustomValidity('');
-  });
-});
 
 // Referral code dalla query string (es. ?referral_code=XXXXXX)
 const incomingReferral = new URLSearchParams(window.location.search).get('referral_code');
@@ -184,6 +175,17 @@ document.getElementById('waitlistForm').addEventListener('submit', async functio
   e.preventDefault();
   const email = document.getElementById('email').value;
   const toast = document.getElementById('toast');
+  const consentError = document.getElementById('consentError');
+
+  // Validazione consensi
+  const c1 = document.getElementById('consent1').checked;
+  const c2 = document.getElementById('consent2').checked;
+  if (!c1 || !c2) {
+    consentError.classList.add('visible');
+    consentError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return;
+  }
+  consentError.classList.remove('visible');
 
   try {
     const body = { email };
